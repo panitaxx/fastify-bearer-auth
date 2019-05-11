@@ -33,7 +33,7 @@ function factory (options) {
     // check if auth function is defined
     if (auth && auth instanceof Function) {
       try {
-        retVal = auth(key)
+        retVal = auth(key, fastifyReq)
       // catch any error from the user provided function
       } catch (err) {
         retVal = Promise.reject(err)
